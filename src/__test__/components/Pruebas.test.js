@@ -28,6 +28,33 @@ describe('prueba de integracion- Login',()=>{
     expect(actions[0].type).toEqual('SIGNIN');
     
   })
+  test('Login -Envio de user y pass-con numeros ', () => {
+    const mockS=storeMock()
+    const email='odin1234';
+    const password='1233333'
+    mockS.dispatch(signIn(12,password))
+    const actions = mockS.getActions();
+    expect(actions[0].type).toEqual('SIGNIN');
+    
+  })
+  test('Login -Envio de user y pass-con numeros ', () => {
+    const mockS=storeMock()
+    const email='odin1234';
+    const password='1233333'
+    mockS.dispatch(signIn('',''))
+    const actions = mockS.getActions();
+    expect(actions[0].type).toEqual('SIGNIN');
+    
+  })
+  test('Login -Envio de user y pass-validacion de correo ', () => {
+    const mockS=storeMock()
+    const email='odin1234@gmail.com';
+    const password='1233333'
+    mockS.dispatch(signIn(email,password))
+    const actions = mockS.getActions();
+    expect(actions[0].type).toEqual('SIGNIN');
+    
+  })
   // test('Login -Envio de user y pass -sin email', () => {      
   //   const mockS=storeMock()  
   //   const email='test@gmail.com';
