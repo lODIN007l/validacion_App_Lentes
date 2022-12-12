@@ -56,13 +56,6 @@ describe('prueba de integracion- Login',()=>{
   
   
   // });
-     
-    
-
-
- 
-  
-
   })
 
 /////////////////////////////////////////////////////////////////
@@ -106,6 +99,14 @@ test('Producto - con  contenido contenido', () => {
 })
 
 }),
+describe('Visulizar <Producto />', () => {
+  test('<Producto /> se visualiza', () => {
+      
+      const jsxHeader = shallow(<ProductItem product={{}}/>);
+      // expect(jsxHeader).toMatchSnapshot();
+  })
+
+});
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -184,21 +185,35 @@ describe('prueba de integracion- Carrito',()=>{
       expect(textoRes).not.toBe('Eliminar del carrito');
     
     } )
-
-
-
+    test('Carrito -Compra-Click en el boton-Finalizar compra', () => {
+      const product={ 
+        id:1,
+        name: 'Testeo',
+        brand: 'testing',
+        price: 50,
+        maxQuantity: 2,
+        description: 'testing validacion',
+        keywords: [],
+        sizes: [],
+        image: '',
+        isFeatured: false,
+        isRecommended: true,
+        availableColors: [],
+        imageCollection: []   
+      }//modelado de un producto como mock para simular el envio de un producto
+      const mockS=storeMock({product:{product}})
+      const wrapper = shallow(<ProductItem product={{}}/>);
+      
+      wrapper.find('.botoncarrit-test').at(0).simulate('click');
+      const textoRes = wrapper.find('.botoncarrit-test-btn').text().trim();
+      expect(textoRes).not.toBe('Finalizar compre');
+    
+    } )
 
 
 });
 
-describe('Pruebas en <Producto />', () => {
-      test('<Producto /> se renderiza bien', () => {
-          
-          const jsxHeader = shallow(<ProductItem product={{}}/>);
-          // expect(jsxHeader).toMatchSnapshot();
-      })
-  
-  });
+
    
 
 
