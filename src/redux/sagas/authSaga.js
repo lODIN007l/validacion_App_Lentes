@@ -5,19 +5,19 @@ import {
   SIGNIN, SIGNIN_WITH_FACEBOOK,
   SIGNIN_WITH_GITHUB, SIGNIN_WITH_GOOGLE,
   SIGNOUT, SIGNUP
-} from '@/constants/constants';
-import { SIGNIN as ROUTE_SIGNIN } from '@/constants/routes';
-import defaultAvatar from '@/images/defaultAvatar.jpg';
-import defaultBanner from '@/images/defaultBanner.jpg';
+} from '../../constants/constants';
+import { SIGNIN as ROUTE_SIGNIN } from '../..//constants/routes';
+// import defaultAvatar from '@/images/defaultAvatar.jpg';
+// import defaultBanner from '@/images/defaultBanner.jpg';
 import { call, put } from 'redux-saga/effects';
-import { signInSuccess, signOutSuccess } from '@/redux/actions/authActions';
-import { clearBasket, setBasketItems } from '@/redux/actions/basketActions';
-import { resetCheckout } from '@/redux/actions/checkoutActions';
-import { resetFilter } from '@/redux/actions/filterActions';
-import { setAuthenticating, setAuthStatus } from '@/redux/actions/miscActions';
-import { clearProfile, setProfile } from '@/redux/actions/profileActions';
-import { history } from '@/routers/AppRouter';
-import firebase from '@/services/firebase';
+import { signInSuccess, signOutSuccess } from '../../redux/actions/authActions';
+import { clearBasket, setBasketItems } from '../..//redux/actions/basketActions';
+import { resetCheckout } from '../../redux/actions/checkoutActions';
+import { resetFilter } from '../../redux/actions/filterActions';
+import { setAuthenticating, setAuthStatus } from '../../redux/actions/miscActions';
+import { clearProfile, setProfile } from '../../redux/actions/profileActions';
+import { history } from '../../routers/AppRouter';
+import firebase from '../../services/firebase';
 
 function* handleError(e) {
   const obj = { success: false, type: 'auth', isError: true };
@@ -50,7 +50,7 @@ function* initRequest() {
   yield put(setAuthStatus({}));
 }
 
-function* authSaga({ type, payload }) {
+export function* authSaga({ type, payload }) {
   switch (type) {
     case SIGNIN:
       try {
@@ -158,7 +158,7 @@ function* authSaga({ type, payload }) {
         // add the user if auth provider is not password
         const user = {
           fullname: payload.displayName ? payload.displayName : 'User',
-          avatar: payload.photoURL ? payload.photoURL : defaultAvatar,
+          // avatar: payload.photoURL ? payload.photoURL : defaultAvatar,
           banner: defaultBanner,
           email: payload.email,
           address: '',

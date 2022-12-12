@@ -1,10 +1,10 @@
 /* eslint-disable react/forbid-prop-types */
-import { Boundary, MessageDisplay } from '@/components/common';
+import { Boundary, MessageDisplay } from '../../components/common';
 import PropType from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setLoading } from '@/redux/actions/miscActions';
-import { getProducts } from '@/redux/actions/productActions';
+import { setLoading } from '../../redux/actions/miscActions';
+import { getProducts } from '../../redux/actions/productActions';
 
 const ProductList = (props) => {
   const {
@@ -49,12 +49,13 @@ const ProductList = (props) => {
       {children}
       {/* Show 'Show More' button if products length is less than total products */}
       {products.items.length < products.total && (
-        <div className="d-flex-center padding-l">
+        <div className="d-flex-center padding-l products" >
           <button
             className="button button-small"
             disabled={isFetching}
             onClick={fetchProducts}
             type="button"
+            
           >
             {isFetching ? 'Fetching Items...' : 'Show More Items'}
           </button>

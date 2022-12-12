@@ -1,15 +1,18 @@
 import { ArrowLeftOutlined, LoadingOutlined } from '@ant-design/icons';
-import { ColorChooser, ImageLoader, MessageDisplay } from '@/components/common';
-import { ProductShowcaseGrid } from '@/components/product';
-import { RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
-import { displayMoney } from '@/helpers/utils';
+import { ColorChooser } from '../../components/common/ColorChooser';
+import { ImageLoader } from '../../components/common/ImageLoader';
+import { MessageDisplay } from '../../components/common/MessageDisplay';
+
+import { ProductShowcaseGrid } from '../../components/product/ProductShowcaseGrid';
+import { RECOMMENDED_PRODUCTS, SHOP } from '../../constants/routes';
+import { displayMoney } from '../../helpers/utils';
 import {
   useBasket,
   useDocumentTitle,
   useProduct,
   useRecommendedProducts,
   useScrollTop
-} from '@/hooks';
+} from '../../hooks';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Select from 'react-select';
@@ -48,7 +51,7 @@ const ViewProduct = () => {
     }
   };
 
-  const handleAddToBasket = () => {
+   const handleAddToBasket = () => {
     addToBasket({ ...product, selectedColor, selectedSize: selectedSize || product.sizes[0] });
   };
 
@@ -133,7 +136,7 @@ const ViewProduct = () => {
               <h1>{displayMoney(product.price)}</h1>
               <div className="product-modal-action">
                 <button
-                  className={`button button-small ${isItemOnBasket(product.id) ? 'button-border button-border-gray' : ''}`}
+                  className={`button botonCarrito button-small ${isItemOnBasket(product.id) ? 'button-border button-border-gray' : ''}`}
                   onClick={handleAddToBasket}
                   type="button"
                 >

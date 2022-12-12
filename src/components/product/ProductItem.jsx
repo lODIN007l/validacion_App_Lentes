@@ -1,6 +1,6 @@
 import { CheckOutlined } from '@ant-design/icons';
-import { ImageLoader } from '@/components/common';
-import { displayMoney } from '@/helpers/utils';
+import { ImageLoader } from '../../components/common';
+import { displayMoney } from '../..//helpers/utils';
 import PropType from 'prop-types';
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
@@ -25,8 +25,8 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
 
   return (
     <SkeletonTheme color="#e1e1e1" highlightColor="#f2f2f2">
-      <div
-        className={`product-card ${!product.id ? 'product-loading' : ''}`}
+      <div 
+        className={`product-card producto-test ${!product.id ? 'product-loading' : ''}`}
         style={{
           border: product && itemOnBasket ? '1px solid #a6a5a5' : '',
           boxShadow: product && itemOnBasket ? '0 10px 15px rgba(0, 0, 0, .07)' : 'none'
@@ -59,15 +59,27 @@ const ProductItem = ({ product, isItemOnBasket, addToBasket }) => {
             </h4>
           </div>
         </div>
+        <div   id={'botonPrueba'} className='botoncarrit-test' onClick={handleAddToBasket} >
         {product.id && (
           <button
-            className={`product-card-button button-small button button-block ${itemOnBasket ? 'button-border button-border-gray' : ''}`}
-            onClick={handleAddToBasket}
+           
+             role="button"
+            className={`product-card-button botonCarrito  button-small button button-block ${itemOnBasket ? 'button-border botonCarrito button-border-gray' : 'botonCarrito'}`}
+            
+            
             type="button"
           >
+            <h1 className='botoncarrit-test-btn'>
+
             {itemOnBasket ? 'Eliminar del carrito' : 'Agregar al carrito'}
+            </h1>
           </button>
         )}
+          <h1 className='botoncarrit-test-btn'>
+
+            Agregar al carrito
+        </h1>
+        </div>
 
       </div>
     </SkeletonTheme>
