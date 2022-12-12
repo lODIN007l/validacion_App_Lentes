@@ -37,7 +37,7 @@ describe('prueba de integracion- Login',()=>{
     expect(actions[0].type).toEqual('SIGNIN');
     
   })
-  test('Login -Envio de user y pass-con numeros ', () => {
+  test('Login -Envio de user y pass- vacias  ', () => {
     const mockS=storeMock()
     const email='odin1234';
     const password='1233333'
