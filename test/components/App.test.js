@@ -1,11 +1,17 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
-// import App from '../../src/client/components/App';
+import ProductItem from '../../src/components/product/ProductItem';
+import { shallow,render,mount } from 'enzyme';
+import React from 'react';
 
-// test('Should render App component', () => {
-//   const wrapper = shallow(<App />);
+// const storeMock=configureStore();
 
-//   expect(wrapper).toMatchSnapshot();
-// });
 
-// More tests ...
+
+
+describe('Visulizar <Producto />', () => {
+  test('<Producto /> se visualiza', () => {
+      
+      const jsxHeader = shallow(<ProductItem product={{}}/>);
+      expect(jsxHeader).toMatchSnapshot();
+  })
+
+});

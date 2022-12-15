@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Visulizar <Producto /> <Producto /> se visualiza 1`] = `
+<SkeletonTheme
+  color="#e1e1e1"
+  highlightColor="#f2f2f2"
+>
+  <div
+    className="product-card product-loading"
+    style={
+      Object {
+        "border": "",
+        "boxShadow": "none",
+      }
+    }
+  >
+    <div
+      className="product-card-content"
+      onClick={[Function]}
+      role="presentation"
+    >
+      <div
+        className="product-card-img-wrapper"
+      >
+        <Skeleton
+          circle={false}
+          count={1}
+          delay={0}
+          duration={1.2}
+          height="90%"
+          width="100%"
+          wrapper={null}
+        />
+      </div>
+      <div
+        className="product-details"
+      >
+        <h5
+          className="product-card-name text-overflow-ellipsis margin-auto"
+        >
+          <Skeleton
+            circle={false}
+            count={1}
+            delay={0}
+            duration={1.2}
+            height={null}
+            width={80}
+            wrapper={null}
+          />
+        </h5>
+        <p
+          className="product-card-brand"
+        >
+          <Skeleton
+            circle={false}
+            count={1}
+            delay={0}
+            duration={1.2}
+            height={null}
+            width={60}
+            wrapper={null}
+          />
+        </p>
+        <h4
+          className="product-card-price"
+        >
+          <Skeleton
+            circle={false}
+            count={1}
+            delay={0}
+            duration={1.2}
+            height={null}
+            width={40}
+            wrapper={null}
+          />
+        </h4>
+      </div>
+    </div>
+  </div>
+</SkeletonTheme>
+`;
