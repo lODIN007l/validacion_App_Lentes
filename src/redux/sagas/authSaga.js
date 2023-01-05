@@ -25,19 +25,19 @@ function* handleError(e) {
 
   switch (e.code) {
     case 'auth/network-request-failed':
-      yield put(setAuthStatus({ ...obj, message: 'Network error has occured. Please try again.' }));
+      yield put(setAuthStatus({ ...obj, message: 'Error en la conexion' }));
       break;
     case 'auth/email-already-in-use':
-      yield put(setAuthStatus({ ...obj, message: 'Email is already in use. Please use another email' }));
+      yield put(setAuthStatus({ ...obj, message: 'Email ya registrado , ingrese un nuevo correo' }));
       break;
     case 'auth/wrong-password':
-      yield put(setAuthStatus({ ...obj, message: 'Incorrect email or password' }));
+      yield put(setAuthStatus({ ...obj, message: 'Email o contraseña incorrecta' }));
       break;
     case 'auth/user-not-found':
-      yield put(setAuthStatus({ ...obj, message: 'Incorrect email or password' }));
+      yield put(setAuthStatus({ ...obj, message: 'Email o contraseña incorrecta' }));
       break;
     case 'auth/reset-password-error':
-      yield put(setAuthStatus({ ...obj, message: 'Failed to send password reset email. Did you type your email correctly?' }));
+      yield put(setAuthStatus({ ...obj, message: 'Falla al resetear la contraseña , verifique el email' }));
       break;
     default:
       yield put(setAuthStatus({ ...obj, message: e.message }));
@@ -132,7 +132,7 @@ function* authSaga({ type, payload }) {
         yield put(setAuthStatus({
           success: true,
           type: 'reset',
-          message: 'Password reset email has been sent to your provided email.'
+          message: 'El enlace para resetear la contraseña se ha enviado.'
         }));
         yield put(setAuthenticating(false));
       } catch (e) {
@@ -180,7 +180,7 @@ function* authSaga({ type, payload }) {
         success: true,
         type: 'auth',
         isError: false,
-        message: 'Successfully signed in. Redirecting...'
+        message: 'Inicio de sesion correcto ,Redirigiendo...'
       }));
       yield put(setAuthenticating(false));
       break;
