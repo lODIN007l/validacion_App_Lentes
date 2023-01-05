@@ -126,7 +126,7 @@ const SignIn = ({ history }) => {
             <div className="auth-divider">
               <h6>OR</h6>
             </div>
-            <SocialLogin isLoading={isAuthenticating} />
+            {/* <SocialLogin isLoading={isAuthenticating} /> */}
           </div>
           <div className="auth-message">
             <span className="auth-info">
