@@ -20,36 +20,39 @@ const SocialLogin = ({ isLoading }) => {
   };
 
   return (
-    <div className="auth-provider">
-      <button
-        className="button auth-provider-button provider-facebook"
-        disabled={isLoading}
-        onClick={onSignInWithFacebook}
-        type="button"
-      >
-        {/* <i className="fab fa-facebook" /> */}
-        <FacebookOutlined />
-        Continue with Facebook
-      </button>
-      <button
-        className="button auth-provider-button provider-google"
-        disabled={isLoading}
-        onClick={onSignInWithGoogle}
-        type="button"
-      >
-        <GoogleOutlined />
-        Continue with Google
-      </button>
-      <button
-        className="button auth-provider-button provider-github"
-        disabled={isLoading}
-        onClick={onSignInWithGithub}
-        type="button"
-      >
-        <GithubFilled />
-        Continue with GitHub
-      </button>
+    <div>
+      <h3>En procesoo mas metodos de autentificacion</h3>
     </div>
+    // <div className="auth-provider">
+    //   <button
+    //     className="button auth-provider-button provider-facebook"
+    //     disabled={isLoading}
+    //     onClick={onSignInWithFacebook}
+    //     type="button"
+    //   >
+    //     {/* <i className="fab fa-facebook" /> */}
+    //     <FacebookOutlined />
+    //     Continue with Facebook
+    //   </button>
+    //   <button
+    //     className="button auth-provider-button provider-google"
+    //     disabled={isLoading}
+    //     onClick={onSignInWithGoogle}
+    //     type="button"
+    //   >
+    //     <GoogleOutlined />
+    //     Continue with Google
+    //   </button>
+    //   <button
+    //     className="button auth-provider-button provider-github"
+    //     disabled={isLoading}
+    //     onClick={onSignInWithGithub}
+    //     type="button"
+    //   >
+    //     <GithubFilled />
+    //     Continue with GitHub
+    //   </button>
+    // </div>
   );
 };
 
