@@ -11,7 +11,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyCOGLNa8M7HVwRse8PBVKbjvT3oG5aQFgA",
   authDomain: "ecommerce-react3.firebaseapp.com",
-  databaseURL: "https://ecommerce-react3-default-rtdb.firebaseio.com/",
+  databaseURL: "https://ecommerce-react3-default-rtdb.firebaseio.com",
   projectId: "ecommerce-react3",
   storageBucket: "ecommerce-react3.appspot.com",
   messagingSenderId: "998897684798",
