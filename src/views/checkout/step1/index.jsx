@@ -41,7 +41,7 @@ const OrderSummary = ({ basket, subtotal }) => {
           <h2 className="basket-total-amount">{displayMoney(subtotal)}</h2>
         </div>
         <br />
-        <div className="checkout-shipping-action">
+        <div className="checkout-shipping-action" id='siguiente-paso'>
           <button
             className="button button-muted"
             onClick={onClickPrevious}
@@ -52,9 +52,10 @@ const OrderSummary = ({ basket, subtotal }) => {
             Continuar con el envio
           </button>
           <button
-            className="button"
+            className="button siguiente"
             onClick={onClickNext}
             type="submit"
+            
           >
             Siguiente Paso
             &nbsp;

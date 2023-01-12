@@ -18,22 +18,22 @@ import ShippingTotal from './ShippingTotal';
 
 const FormSchema = Yup.object().shape({
   fullname: Yup.string()
-    .required('Full name is required.')
-    .min(2, 'Full name must be at least 2 characters long.')
-    .max(60, 'Full name must only be less than 60 characters.'),
+    .required('Nombre completo reqyerido.')
+    .min(2, 'El nombre es inferior a 2 caracteres')
+    .max(60, 'El npmbre no debe sobrepasar los 60 caracteres'),
   email: Yup.string()
-    .email('Email is not valid.')
-    .required('Email is required.'),
+    .email('Email no valido.')
+    .required('Email requeridp.'),
   address: Yup.string()
-    .required('Shipping address is required.'),
+    .required('Direccion de envio requerida'),
   mobile: Yup.object()
     .shape({
       country: Yup.string(),
       countryCode: Yup.string(),
-      dialCode: Yup.string().required('Mobile number is required'),
-      value: Yup.string().required('Mobile number is required')
+      dialCode: Yup.string().required('Numero movil requerido.'),
+      value: Yup.string().required('Numero movil requerido.')
     })
-    .required('Mobile number is required.'),
+    .required('Numero movil requerido.'),
   isInternational: Yup.boolean(),
   isDone: Yup.boolean()
 });

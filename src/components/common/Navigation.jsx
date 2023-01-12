@@ -116,7 +116,7 @@ const Navigation = () => {
                 onClick={onClickLink}
                 to={ROUTE.SIGNUP}
               >
-                Login
+                Registrarse
               </Link>
             )}
             {pathname !== ROUTE.SIGNIN && (
@@ -125,7 +125,7 @@ const Navigation = () => {
                 onClick={onClickLink}
                 to={ROUTE.SIGNIN}
               >
-                Registrarse
+                Login
               </Link>
             )}
           </li>

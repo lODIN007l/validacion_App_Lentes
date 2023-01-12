@@ -13,15 +13,15 @@ import * as Yup from 'yup';
 
 const SignInSchema = Yup.object().shape({
   email: Yup.string()
-    .email('Email is not valid.')
-    .required('Email is required.'),
+    .email(' Email no valido.')
+    .required('Email requerido.'),
   password: Yup.string()
-    .required('Password is required.')
-    .min(8, 'Password length should be at least 8 characters.')
-    .matches(/[A-Z\W]/g, 'Password should contain at least 1 uppercase letter.'),
+    .required('Password requerido.')
+    .min(8, 'Password no puede ser menor que 8 caracteres.')
+    .matches(/[A-Z\W]/g, 'Password debe contener almenos una letra mayuscula.'),
   fullname: Yup.string()
-    .required('Full name is required.')
-    .min(4, 'Name should be at least 4 characters.')
+    .required('Nombre completo requerido.')
+    .min(4, 'El nombre debe tener al menos 4 caracteres.')
 });
 
 const SignUp = ({ history }) => {
@@ -119,7 +119,7 @@ const SignUp = ({ history }) => {
                         disabled={isAuthenticating}
                         type="submit"
                       >
-                        {isAuthenticating ? 'Registrando' : 'Registrarse'}
+                        {isAuthenticating ? 'Registrando' : 'Registrar'}
                         &nbsp;
                         {isAuthenticating ? <LoadingOutlined /> : <ArrowRightOutlined />}
                       </button>

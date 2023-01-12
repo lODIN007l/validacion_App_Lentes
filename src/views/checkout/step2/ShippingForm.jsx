@@ -62,6 +62,7 @@ const ShippingForm = () => {
                   <input
                     checked={field.value}
                     id={field.name}
+                    className='check-envio'
                     onChange={(e) => {
                       form.setValues({ ...form.values, [field.name]: e.target.checked });
                     }}

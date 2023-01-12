@@ -14,10 +14,10 @@ import * as Yup from 'yup';
 
 const SignInSchema = Yup.object().shape({
   email: Yup.string()
-    .email('Email is not valid.')
-    .required('Email is required.'),
+    .email('Email no valido.')
+    .required('Email requerido.'),
   password: Yup.string()
-    .required('Password is required.')
+    .required('Password requerido.')
 });
 
 const SignIn = ({ history }) => {
@@ -100,7 +100,7 @@ const SignIn = ({ history }) => {
                         />
                       </div>
                       <br />
-                      <div className="auth-field auth-action">
+                      <div className="auth-field auth-action " name="loginbtn" >
                         <Link
                           onClick={onClickLink}
                           style={{ textDecoration: 'underline' }}
@@ -109,11 +109,12 @@ const SignIn = ({ history }) => {
                           <span>Forgot password?</span>
                         </Link>
                         <button
-                          className="button auth-button"
+                          name='login_boton'
+                          className="button auth-button loginBTN"
                           disabled={isAuthenticating}
                           type="submit"
                         >
-                          {isAuthenticating ? 'Registrar' : 'Ingresar'}
+                          {isAuthenticating ? 'Logueandose' : 'Login'}
                           &nbsp;
                           {isAuthenticating ? <LoadingOutlined /> : <ArrowRightOutlined />}
                         </button>
